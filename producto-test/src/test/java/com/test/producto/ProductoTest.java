@@ -33,7 +33,18 @@ public class ProductoTest {
 
     }
 
-  
+    @Test
+    @Order(2)
+    public void buscarProductoPorNombre(){
+        String nombre ="Televisor HD";
+        Producto producto = repository.findByNombre(nombre);
+        assertNotNull(producto);
+        assertThat(producto.getNombre()).isEqualTo(nombre);
+
+
+    }
+
+
 
 }
 
