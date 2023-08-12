@@ -44,7 +44,15 @@ public class ProductoTest {
 
     }
 
+    @Test
+    @Order(3)
+    public void buscarProductoPorNombreNoExistente(){
+        String nombre ="Televisor H";//confirmar qu el producto es nulo
+        Producto producto = repository.findByNombre(nombre);
+        assertNull(producto);
+        //assertThat(producto.getNombre()).isEqualTo(nombre);
 
+    }
 
 }
 
